@@ -36,3 +36,21 @@ func GetInput(filename string) interface{} {
 
 	return stringInput
 }
+
+func GetStringInput(filename string) *[]string {
+	stringInput := &[]string{}
+
+	f, err := os.Open(filename)
+	if err != nil {
+		log.Fatalln(err)
+	}
+	defer f.Close()
+	scanner := bufio.NewScanner(f)
+
+	for scanner.Scan() {
+		v := scanner.Text()
+		*stringInput = append(*stringInput, v)
+	}
+
+	return stringInput
+}

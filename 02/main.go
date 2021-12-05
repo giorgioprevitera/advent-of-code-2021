@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"strconv"
 	"strings"
@@ -55,6 +56,6 @@ func main() {
 	}
 	partOneAnswer := getPartOneAnswer(input)
 	partTwoAnswer := getPartTwoAnswer(input)
-	log.Printf("Part One answer is: %d", partOneAnswer)
-	log.Printf("Part Two answer is: %d", partTwoAnswer)
+	fmt.Printf("Part One answer is: %d\n", partOneAnswer)
+	fmt.Printf("Part Two answer is: %d\n", partTwoAnswer)
 }
